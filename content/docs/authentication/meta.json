@@ -1,0 +1,12 @@
+{
+  "title": "Authentication",
+  "pages": [
+    "creating-your-account",
+    "signing-in",
+    "resetting-your-password",
+    "two-factor-authentication",
+    "social-login",
+    "passkeys",
+    "keeping-your-account-secure"
+  ]
+}

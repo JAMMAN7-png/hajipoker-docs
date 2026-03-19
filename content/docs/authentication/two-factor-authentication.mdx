@@ -1,0 +1,92 @@
+---
+title: Two-Factor Authentication (2FA)
+description: Add an extra layer of security with TOTP-based two-factor authentication
+---
+
+Two-Factor Authentication (2FA) adds an extra layer of security to your HajiPoker account. Even if someone knows your password, they won't be able to sign in without the code from your authenticator app.
+
+## Why Use 2FA?
+
+Your HajiPoker account holds your wallet balance, game history, and personal information. Enabling 2FA means:
+
+- **Extra protection** — A stolen password alone isn't enough to access your account
+- **Peace of mind** — You'll be notified via your authenticator app whenever someone tries to sign in
+- **Account recovery** — Backup codes let you regain access even if you lose your phone
+
+<Callout type="warn">
+We **strongly recommend** enabling 2FA, especially if you have funds in your wallet.
+</Callout>
+
+## What You'll Need
+
+An authenticator app on your phone. Popular free options include:
+
+- **Google Authenticator** (iOS and Android)
+- **Authy** (iOS and Android)
+- **Microsoft Authenticator** (iOS and Android)
+
+## How to Enable 2FA
+
+1. Sign in to your HajiPoker account
+2. Go to **Account Settings** then **Security**
+3. Click **Enable Two-Factor Authentication**
+4. Enter your **current password** to confirm your identity
+5. A **QR code** will appear on screen
+6. Open your authenticator app and **scan the QR code**
+7. Enter the **6-digit code** shown in your authenticator app to verify the setup
+8. **Save your backup codes!** You'll be given **8 one-time recovery codes** — store them somewhere safe (we recommend a password manager or a printed copy in a secure location)
+9. Click **Confirm** — 2FA is now active on your account
+
+<Callout type="error">
+Your backup codes are shown only once. If you lose them and lose access to your authenticator app, you will be locked out of your account.
+</Callout>
+
+## Signing In with 2FA
+
+Once 2FA is enabled, the sign-in process adds one extra step:
+
+1. Enter your email and password as usual
+2. You'll be prompted for a **6-digit verification code**
+3. Open your authenticator app and enter the current code
+4. Click **Verify**
+
+### Trust This Device
+
+When entering your 2FA code, you can choose to **Trust this device**. This skips the 2FA prompt on that specific device for **30 days**, so you don't have to enter a code every time you sign in from your personal computer or phone.
+
+<Callout type="warn">
+Only trust devices that belong to you. Never use this option on shared or public computers.
+</Callout>
+
+## Using Backup Codes
+
+If you can't access your authenticator app (lost phone, new device, app deleted), you can use one of your **8 backup codes** instead:
+
+1. On the 2FA verification screen, click **Use a backup code**
+2. Enter one of your saved backup codes
+3. Click **Verify**
+
+Each backup code can only be used **once**. After using a code, it's permanently consumed. If you're running low on backup codes, disable and re-enable 2FA to generate a fresh set.
+
+## How to Disable 2FA
+
+1. Go to **Account Settings** then **Security**
+2. Click **Disable Two-Factor Authentication**
+3. Enter your **current password** to confirm
+4. 2FA will be removed from your account
+
+You can re-enable it at any time by following the setup steps above.
+
+## Frequently Asked Questions
+
+**What if I lost my phone and my backup codes?**
+Unfortunately, if you've lost both your authenticator device and your backup codes, we cannot verify your identity remotely. Contact our support team — we'll do our best to help, but recovery may require additional identity verification.
+
+**Can I use SMS instead of an authenticator app?**
+Currently, HajiPoker only supports TOTP-based authenticator apps. SMS-based 2FA is not available because it's less secure.
+
+**My code keeps saying "invalid" — what's wrong?**
+TOTP codes are time-based. Make sure the clock on your phone is set to **automatic**. Even a 30-second difference can cause codes to fail.
+
+**Can I use 2FA with social login?**
+2FA works with email/password sign-in. If you sign in exclusively via Google, Discord, or Telegram, 2FA on HajiPoker won't apply — your social account's own security features protect you instead.
