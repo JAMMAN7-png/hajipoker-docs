@@ -1,4 +1,23 @@
 {
   "title": "Help Center",
-  "pages": ["---Authentication---", "authentication"]
+  "pages": [
+    "---Getting Started---",
+    "getting-started",
+    "---Authentication---",
+    "authentication",
+    "---Wallet & Payments---",
+    "wallet-and-payments",
+    "---Playing Poker---",
+    "playing-poker",
+    "---Tournaments---",
+    "tournaments",
+    "---Provably Fair---",
+    "provably-fair",
+    "---VIP Program---",
+    "vip-program",
+    "---Referrals---",
+    "referrals",
+    "---Support---",
+    "support"
+  ]
 }
