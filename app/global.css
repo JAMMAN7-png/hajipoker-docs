@@ -2,14 +2,238 @@
 @import 'fumadocs-ui/css/neutral.css';
 @import 'fumadocs-ui/css/preset.css';
 
+/* ═══════════════════════════════════════════════════════
+   HAJIPOKER DARK CINEMA DESIGN SYSTEM
+   ═══════════════════════════════════════════════════════ */
+
 :root {
-  --fd-primary: 159 75% 38%;
-  --fd-background: 0 0% 100%;
-  --fd-foreground: 0 0% 3.9%;
+  --gold: #d4af37;
+  --gold-light: #f5e6a3;
+  --midnight: #0a0e27;
+  --surface: #0f1535;
+  --secondary: #1a3a52;
+  --muted: #1e2a3e;
+  --muted-fg: #64748b;
+
+  --fd-primary: 43 75% 52%;
+  --fd-background: 230 60% 10%;
+  --fd-foreground: 210 40% 98%;
+  --fd-muted: 215 30% 18%;
+  --fd-muted-foreground: 215 16% 47%;
+  --fd-card: 230 55% 13%;
+  --fd-card-foreground: 210 40% 98%;
+  --fd-border: 0 0% 100% / 0.1;
+  --fd-accent: 230 55% 13%;
+  --fd-accent-foreground: 210 40% 98%;
+  --fd-popover: 230 55% 13%;
+  --fd-popover-foreground: 210 40% 98%;
+  --fd-secondary: 204 50% 21%;
+  --fd-secondary-foreground: 210 40% 98%;
 }
 
-.dark {
-  --fd-primary: 160 84% 39%;
-  --fd-background: 0 0% 3.9%;
-  --fd-foreground: 0 0% 98%;
+.dark,
+:root {
+  --fd-primary: 43 75% 52%;
+  --fd-background: 230 60% 10%;
+  --fd-foreground: 210 40% 98%;
+  --fd-muted: 215 30% 18%;
+  --fd-muted-foreground: 215 16% 47%;
+  --fd-card: 230 55% 13%;
+  --fd-card-foreground: 210 40% 98%;
+  --fd-border: 0 0% 100% / 0.1;
+  --fd-accent: 230 55% 13%;
+  --fd-accent-foreground: 210 40% 98%;
+  --fd-popover: 230 55% 13%;
+  --fd-popover-foreground: 210 40% 98%;
+  --fd-secondary: 204 50% 21%;
+  --fd-secondary-foreground: 210 40% 98%;
+  color-scheme: dark;
+}
+
+/* ═══ Base ═══ */
+html {
+  color-scheme: dark;
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--midnight);
+  color: #f8fafc;
+}
+
+/* ═══ Gold Gradient Text Utility ═══ */
+.text-gold-gradient {
+  background: linear-gradient(135deg, #d4af37 0%, #f5e6a3 50%, #d4af37 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ═══ Glassmorphism Utility ═══ */
+.glass {
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.glass-strong {
+  backdrop-filter: blur(30px);
+  -webkit-backdrop-filter: blur(30px);
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+/* ═══ Gold CTA Button ═══ */
+.btn-gold {
+  background: linear-gradient(to right, #d4af37, #f5e6a3);
+  color: #0a0e27;
+  font-weight: 600;
+  box-shadow: 0 0 22px rgba(212, 175, 55, 0.35);
+  transition: all 0.3s ease;
+}
+
+.btn-gold:hover {
+  box-shadow: 0 0 36px rgba(212, 175, 55, 0.55);
+  transform: translateY(-1px);
+}
+
+/* ═══ Glass Button ═══ */
+.btn-glass {
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  color: #f8fafc;
+  transition: all 0.3s ease;
+}
+
+.btn-glass:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.25);
+}
+
+/* ═══ Floating Particle Keyframes ═══ */
+@keyframes float-slow {
+  0%, 100% { transform: translateY(0) translateX(0) rotate(0deg); opacity: 0.15; }
+  25% { transform: translateY(-30px) translateX(10px) rotate(5deg); opacity: 0.3; }
+  50% { transform: translateY(-15px) translateX(-10px) rotate(-3deg); opacity: 0.2; }
+  75% { transform: translateY(-40px) translateX(5px) rotate(3deg); opacity: 0.25; }
+}
+
+@keyframes float-medium {
+  0%, 100% { transform: translateY(0) rotate(0deg); opacity: 0.1; }
+  33% { transform: translateY(-50px) rotate(10deg); opacity: 0.25; }
+  66% { transform: translateY(-25px) rotate(-5deg); opacity: 0.15; }
+}
+
+@keyframes float-fast {
+  0%, 100% { transform: translateY(0) translateX(0); opacity: 0.08; }
+  50% { transform: translateY(-60px) translateX(20px); opacity: 0.2; }
+}
+
+@keyframes pulse-glow {
+  0%, 100% { opacity: 0.3; filter: blur(40px); }
+  50% { opacity: 0.6; filter: blur(60px); }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+
+@keyframes count-up {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-float-slow { animation: float-slow 8s ease-in-out infinite; }
+.animate-float-medium { animation: float-medium 6s ease-in-out infinite; }
+.animate-float-fast { animation: float-fast 5s ease-in-out infinite; }
+.animate-pulse-glow { animation: pulse-glow 4s ease-in-out infinite; }
+
+/* ═══ Custom Scrollbar ═══ */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0a0e27;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #d4af37, #1a3a52);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #f5e6a3, #d4af37);
+}
+
+/* Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #d4af37 #0a0e27;
+}
+
+/* ═══ Selection ═══ */
+::selection {
+  background: rgba(212, 175, 55, 0.3);
+  color: #f5e6a3;
+}
+
+::-moz-selection {
+  background: rgba(212, 175, 55, 0.3);
+  color: #f5e6a3;
+}
+
+/* ═══ Fumadocs overrides for Dark Cinema ═══ */
+[data-theme="light"] {
+  --fd-background: 230 60% 10%;
+  --fd-foreground: 210 40% 98%;
+  color-scheme: dark;
+}
+
+/* Force dark on the docs layout */
+.fd-layout-home,
+.fd-layout-docs {
+  background: #0a0e27;
+}
+
+/* Sidebar & nav styling */
+nav[class*="fd-"] {
+  border-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+/* Code blocks */
+pre {
+  background: #0f1535 !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+}
+
+/* ═══ Card hover glow ═══ */
+.card-glow {
+  position: relative;
+  transition: all 0.4s ease;
+}
+
+.card-glow::before {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  background: linear-gradient(135deg, rgba(212, 175, 55, 0), rgba(212, 175, 55, 0));
+  z-index: -1;
+  transition: all 0.4s ease;
+}
+
+.card-glow:hover::before {
+  background: linear-gradient(135deg, rgba(212, 175, 55, 0.3), rgba(245, 230, 163, 0.1));
+}
+
+.card-glow:hover {
+  border-color: rgba(212, 175, 55, 0.3);
+  box-shadow: 0 0 30px rgba(212, 175, 55, 0.1);
+  transform: translateY(-4px);
 }
