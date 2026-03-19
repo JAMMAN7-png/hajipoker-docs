@@ -237,3 +237,876 @@ pre {
   box-shadow: 0 0 30px rgba(212, 175, 55, 0.1);
   transform: translateY(-4px);
 }
+
+
+/* ═══════════════════════════════════════════════════════════
+   FUMADOCS DOCS PAGES — DARK CINEMA COMPREHENSIVE OVERRIDES
+   ═══════════════════════════════════════════════════════════ */
+
+/* ─── Callout Color Tokens ─── */
+:root,
+.dark {
+  --color-fd-info: #3b82f6;
+  --color-fd-warning: #eab308;
+  --color-fd-error: #ef4444;
+  --color-fd-success: #22c55e;
+  --color-fd-idea: #d4af37;
+}
+
+/* ════════════════════════════════
+   A) SIDEBAR
+   ════════════════════════════════ */
+
+/* Sidebar container */
+#nd-sidebar,
+aside[id="nd-sidebar"] {
+  background: #0a0e27;
+  border-right: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* Sidebar inner scroll area */
+#nd-sidebar > div {
+  background: #0a0e27;
+}
+
+/* Sidebar scrollbar */
+#nd-sidebar ::-webkit-scrollbar {
+  width: 4px;
+}
+
+#nd-sidebar ::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+#nd-sidebar ::-webkit-scrollbar-thumb {
+  background: rgba(212, 175, 55, 0.3);
+  border-radius: 4px;
+}
+
+#nd-sidebar ::-webkit-scrollbar-thumb:hover {
+  background: rgba(212, 175, 55, 0.6);
+}
+
+/* Sidebar links — base state */
+#nd-sidebar a {
+  color: rgba(248, 250, 252, 0.65);
+  transition: color 0.2s ease, background-color 0.2s ease;
+}
+
+#nd-sidebar a:hover {
+  color: #d4af37;
+  background-color: rgba(212, 175, 55, 0.06);
+}
+
+/* Sidebar active item — gold accent */
+#nd-sidebar a[data-active="true"] {
+  color: #d4af37;
+  background-color: rgba(212, 175, 55, 0.1);
+}
+
+/* Active item left bar override to gold */
+#nd-sidebar a[data-active="true"]::before {
+  background-color: #d4af37 !important;
+}
+
+/* Sidebar section / folder headers */
+#nd-sidebar button,
+#nd-sidebar [role="treeitem"] > span:first-child {
+  color: rgba(248, 250, 252, 0.75);
+  transition: color 0.2s ease;
+}
+
+#nd-sidebar button:hover {
+  color: #d4af37;
+}
+
+/* Sidebar folder separator line — gold tint */
+#nd-sidebar [role="group"]::before {
+  background-color: rgba(212, 175, 55, 0.15);
+}
+
+/* Sidebar border between items */
+#nd-sidebar [class*="border"] {
+  border-color: rgba(255, 255, 255, 0.06);
+}
+
+/* Mobile sidebar overlay */
+#nd-sidebar[data-state="open"] {
+  background: #0a0e27;
+}
+
+
+/* ════════════════════════════════
+   B) TOP NAVBAR / HEADER
+   ════════════════════════════════ */
+
+/* Main header bar */
+#nd-subnav,
+header[id="nd-subnav"],
+#nd-docs-layout > header,
+nav[data-transparent] {
+  background: rgba(10, 14, 39, 0.85);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* Non-transparent state */
+header[data-transparent="false"],
+nav[data-transparent="false"] {
+  background: rgba(10, 14, 39, 0.92);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+
+/* Nav title — gold */
+#nd-docs-layout header a[class*="font"],
+#nd-subnav a[class*="font"],
+header .font-semibold,
+header .font-medium {
+  color: #d4af37;
+}
+
+/* Search button — glassmorphism */
+#nd-docs-layout header button,
+#nd-subnav button {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  transition: all 0.2s ease;
+}
+
+#nd-docs-layout header button:hover,
+#nd-subnav button:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(212, 175, 55, 0.3);
+}
+
+/* Nav links */
+#nd-docs-layout header nav a {
+  color: rgba(248, 250, 252, 0.7);
+  transition: color 0.2s ease;
+}
+
+#nd-docs-layout header nav a:hover {
+  color: #d4af37;
+}
+
+/* GitHub icon link */
+#nd-docs-layout header a[href*="github"] {
+  color: rgba(248, 250, 252, 0.6);
+  transition: color 0.2s ease;
+}
+
+#nd-docs-layout header a[href*="github"]:hover {
+  color: #d4af37;
+}
+
+
+/* ════════════════════════════════
+   C) CONTENT AREA — DOCS PAGE
+   ════════════════════════════════ */
+
+/* Docs layout container */
+#nd-docs-layout {
+  background: #0a0e27;
+}
+
+/* Main content area */
+#nd-page {
+  background: #0a0e27;
+}
+
+/* Page title (h1) — gold gradient */
+#nd-page h1,
+#nd-page [class*="DocsTitle"],
+.prose h1 {
+  background: linear-gradient(135deg, #d4af37 0%, #f5e6a3 50%, #d4af37 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-weight: 700;
+}
+
+/* Page description — muted */
+#nd-page p:first-of-type,
+#nd-page [class*="DocsDescription"] {
+  color: #94a3b8;
+}
+
+/* Border separator under title */
+#nd-page > div > .border-b,
+#nd-page .border-b {
+  border-color: rgba(212, 175, 55, 0.2);
+}
+
+/* Headings h2, h3, h4 — bright with gold tint */
+.prose h2 {
+  color: #e8d5a0;
+  border-bottom: 1px solid rgba(212, 175, 55, 0.15);
+  padding-bottom: 0.5em;
+}
+
+.prose h3 {
+  color: #dfc990;
+}
+
+.prose h4 {
+  color: #c8b478;
+}
+
+/* Body text */
+.prose {
+  color: #e2e8f0;
+  line-height: 1.8;
+}
+
+.prose p {
+  color: #e2e8f0;
+}
+
+/* Links in content — gold */
+.prose a {
+  color: #d4af37;
+  text-decoration: none;
+  transition: color 0.2s ease;
+  border-bottom: 1px solid rgba(212, 175, 55, 0.3);
+}
+
+.prose a:hover {
+  color: #f5e6a3;
+  border-bottom-color: #f5e6a3;
+}
+
+/* Strong / bold text */
+.prose strong {
+  color: #f8fafc;
+}
+
+/* Lists */
+.prose li {
+  color: #e2e8f0;
+}
+
+.prose li::marker {
+  color: #d4af37;
+}
+
+/* Horizontal rules */
+.prose hr {
+  border-color: rgba(255, 255, 255, 0.08);
+}
+
+/* Blockquote */
+.prose blockquote {
+  border-left-color: #d4af37;
+  background: rgba(212, 175, 55, 0.05);
+  color: #cbd5e1;
+}
+
+
+/* ════════════════════════════════
+   D) TABLE OF CONTENTS (RIGHT)
+   ════════════════════════════════ */
+
+/* TOC container */
+#nd-toc,
+aside[id="nd-toc"] {
+  background: transparent;
+}
+
+/* TOC heading */
+#nd-toc p,
+#nd-toc h3,
+#nd-toc [class*="toc-title"] {
+  color: #d4af37;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-size: 0.75rem;
+}
+
+/* TOC links — base */
+#nd-toc a {
+  color: rgba(248, 250, 252, 0.5);
+  transition: color 0.2s ease;
+  font-size: 0.8125rem;
+}
+
+#nd-toc a:hover {
+  color: #d4af37;
+}
+
+/* TOC active item — gold with left border */
+#nd-toc a[data-active="true"] {
+  color: #d4af37;
+  font-weight: 500;
+}
+
+/* TOC active indicator bar */
+#nd-toc [data-active="true"]::before,
+#nd-toc a[data-active="true"]::before {
+  background-color: #d4af37 !important;
+}
+
+/* TOC border line */
+#nd-toc [role="none"],
+#nd-toc > div > div::before {
+  background-color: rgba(255, 255, 255, 0.06);
+}
+
+/* TOC popover (mobile) */
+[data-toc-popover],
+[data-toc-popover-content] {
+  background: #0f1535;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+
+[data-toc-popover-trigger] {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+
+/* ════════════════════════════════
+   E) CODE BLOCKS
+   ════════════════════════════════ */
+
+/* Pre / code block container */
+.prose pre,
+pre[class*="shiki"],
+figure[class*="code"],
+div[class*="codeblock"] {
+  background: #0f1535 !important;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 0.75rem;
+}
+
+/* Code block title bar */
+figcaption,
+div[class*="codeblock"] > div:first-child {
+  background: rgba(15, 21, 53, 0.8);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  color: #94a3b8;
+}
+
+/* Copy button in code blocks */
+pre button,
+figure button,
+div[class*="codeblock"] button {
+  color: rgba(248, 250, 252, 0.5);
+  transition: color 0.2s ease;
+}
+
+pre button:hover,
+figure button:hover,
+div[class*="codeblock"] button:hover {
+  color: #d4af37;
+}
+
+/* Inline code */
+.prose code:not(pre code) {
+  background: #1e2a3e;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #e8d5a0;
+  border-radius: 0.375rem;
+  padding: 0.15em 0.4em;
+  font-size: 0.875em;
+}
+
+/* Code text brightness */
+pre code {
+  color: #e2e8f0;
+}
+
+
+/* ════════════════════════════════
+   F) CALLOUTS / ADMONITIONS
+   ════════════════════════════════ */
+
+/* Base callout style — glassmorphism */
+.prose > div[style*="--callout-color"],
+div[class*="callout"],
+div[class*="Callout"] {
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-radius: 0.75rem;
+}
+
+/* Info callout */
+div[style*="--color-fd-info"] {
+  background: rgba(26, 58, 82, 0.5);
+  border-color: rgba(59, 130, 246, 0.2);
+}
+
+/* Warning callout */
+div[style*="--color-fd-warning"] {
+  background: rgba(60, 45, 10, 0.5);
+  border-color: rgba(234, 179, 8, 0.2);
+}
+
+/* Error callout */
+div[style*="--color-fd-error"] {
+  background: rgba(60, 15, 15, 0.5);
+  border-color: rgba(239, 68, 68, 0.2);
+}
+
+/* Success callout */
+div[style*="--color-fd-success"] {
+  background: rgba(10, 50, 25, 0.5);
+  border-color: rgba(34, 197, 94, 0.2);
+}
+
+
+/* ════════════════════════════════
+   G) TABLES
+   ════════════════════════════════ */
+
+.prose table {
+  border-collapse: separate;
+  border-spacing: 0;
+  overflow: hidden;
+  border-radius: 0.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* Table header */
+.prose thead {
+  background: #1a3a52;
+}
+
+.prose thead th {
+  color: #d4af37;
+  font-weight: 600;
+  border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+  border-right: 1px solid rgba(255, 255, 255, 0.05);
+  padding: 0.75rem 1rem;
+}
+
+.prose thead th:last-child {
+  border-right: none;
+}
+
+/* Table body rows — alternating */
+.prose tbody tr:nth-child(odd) {
+  background: #0f1535;
+}
+
+.prose tbody tr:nth-child(even) {
+  background: #0a0e27;
+}
+
+.prose tbody tr {
+  transition: background-color 0.2s ease;
+}
+
+.prose tbody tr:hover {
+  background: rgba(212, 175, 55, 0.06);
+}
+
+/* Table cells */
+.prose tbody td {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  border-right: 1px solid rgba(255, 255, 255, 0.04);
+  padding: 0.65rem 1rem;
+  color: #e2e8f0;
+}
+
+.prose tbody td:last-child {
+  border-right: none;
+}
+
+.prose tbody tr:last-child td {
+  border-bottom: none;
+}
+
+
+/* ════════════════════════════════
+   H) CARDS / STEPS / TABS
+   ════════════════════════════════ */
+
+/* Fumadocs cards — glassmorphism */
+a[class*="card"],
+div[class*="card"],
+.prose .fd-card,
+#nd-page a[class*="rounded"] {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  transition: all 0.3s ease;
+  border-radius: 0.75rem;
+}
+
+a[class*="card"]:hover,
+div[class*="card"]:hover,
+#nd-page a[class*="rounded"]:hover {
+  border-color: rgba(212, 175, 55, 0.3);
+  box-shadow: 0 0 20px rgba(212, 175, 55, 0.08);
+  background: rgba(255, 255, 255, 0.06);
+}
+
+/* Card titles */
+a[class*="card"] p:first-child,
+div[class*="card"] p:first-child {
+  color: #f8fafc;
+  font-weight: 600;
+}
+
+/* Steps — gold numbered circles */
+.fd-steps {
+  border-left-color: rgba(212, 175, 55, 0.2);
+}
+
+.fd-step::before {
+  background-color: #d4af37 !important;
+  color: #0a0e27 !important;
+  font-weight: 700;
+  box-shadow: 0 0 12px rgba(212, 175, 55, 0.3);
+}
+
+/* Tabs — gold accent */
+[role="tablist"],
+div[class*="tabs"] > div:first-child {
+  background: rgba(255, 255, 255, 0.03);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+[role="tab"] {
+  color: rgba(248, 250, 252, 0.6);
+  transition: color 0.2s ease;
+}
+
+[role="tab"]:hover {
+  color: #d4af37;
+}
+
+[role="tab"][aria-selected="true"],
+[role="tab"][data-state="active"] {
+  color: #d4af37;
+  border-bottom-color: #d4af37;
+}
+
+/* Tab panels */
+[role="tabpanel"] {
+  background: rgba(15, 21, 53, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-top: none;
+}
+
+
+/* ════════════════════════════════
+   I) BREADCRUMBS
+   ════════════════════════════════ */
+
+nav[aria-label*="breadcrumb"],
+#nd-page nav[class*="breadcrumb"],
+nav[class*="Breadcrumb"],
+[class*="breadcrumb"] {
+  color: #64748b;
+}
+
+[class*="breadcrumb"] a {
+  color: rgba(248, 250, 252, 0.5);
+  transition: color 0.2s ease;
+}
+
+[class*="breadcrumb"] a:hover {
+  color: #d4af37;
+}
+
+/* Current breadcrumb page — gold */
+[class*="breadcrumb"] span:last-child,
+[class*="breadcrumb"] li:last-child {
+  color: #d4af37;
+}
+
+/* Breadcrumb separators */
+[class*="breadcrumb"] svg,
+[class*="breadcrumb"] [aria-hidden="true"] {
+  color: rgba(255, 255, 255, 0.2);
+}
+
+
+/* ════════════════════════════════
+   J) FOOTER / PAGINATION NAV
+   ════════════════════════════════ */
+
+/* Previous / Next page navigation cards */
+#nd-page footer,
+#nd-page > nav,
+#nd-page > div > nav {
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+#nd-page footer a,
+#nd-page > nav a,
+#nd-page a[class*="prev"],
+#nd-page a[class*="next"],
+#nd-page > div > a[class*="rounded"] {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-radius: 0.75rem;
+  transition: all 0.3s ease;
+  color: #e2e8f0;
+}
+
+#nd-page footer a:hover,
+#nd-page > nav a:hover,
+#nd-page a[class*="prev"]:hover,
+#nd-page a[class*="next"]:hover,
+#nd-page > div > a[class*="rounded"]:hover {
+  border-color: rgba(212, 175, 55, 0.3);
+  box-shadow: 0 0 16px rgba(212, 175, 55, 0.08);
+  background: rgba(255, 255, 255, 0.06);
+}
+
+/* Footer link label ("Previous" / "Next") */
+#nd-page footer a span:first-child {
+  color: #64748b;
+}
+
+/* Footer link page title */
+#nd-page footer a span:last-child {
+  color: #f8fafc;
+}
+
+
+/* ════════════════════════════════
+   K) SEARCH DIALOG
+   ════════════════════════════════ */
+
+/* Search dialog overlay */
+[data-radix-popper-content-wrapper],
+dialog,
+[role="dialog"] {
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+/* Search dialog container */
+[role="dialog"][class*="search"],
+div[class*="search-dialog"],
+[cmdk-root],
+[data-search] {
+  background: #0f1535;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 0.75rem;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+}
+
+/* Search input */
+[cmdk-input],
+[role="dialog"] input[type="text"],
+[role="dialog"] input[type="search"],
+[data-search] input {
+  background: #0a0e27;
+  color: #f8fafc;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+[cmdk-input]:focus,
+[role="dialog"] input:focus,
+[data-search] input:focus {
+  border-color: #d4af37;
+  box-shadow: 0 0 0 2px rgba(212, 175, 55, 0.2);
+  outline: none;
+}
+
+/* Search results */
+[cmdk-item],
+[role="dialog"] [role="option"],
+[data-search] a {
+  background: transparent;
+  color: #e2e8f0;
+  border-radius: 0.5rem;
+  transition: background-color 0.15s ease;
+}
+
+[cmdk-item][data-selected="true"],
+[cmdk-item][aria-selected="true"],
+[role="dialog"] [role="option"][data-selected="true"],
+[data-search] a:hover {
+  background: rgba(212, 175, 55, 0.1);
+  color: #d4af37;
+}
+
+/* Search no results */
+[cmdk-empty] {
+  color: #64748b;
+}
+
+/* Search keyboard shortcuts */
+[cmdk-root] kbd,
+[role="dialog"] kbd {
+  background: #1e2a3e;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #94a3b8;
+}
+
+
+/* ════════════════════════════════
+   L) MISCELLANEOUS OVERRIDES
+   ════════════════════════════════ */
+
+/* All borders in docs layout — ensure dark cinema */
+#nd-docs-layout [class*="border"] {
+  border-color: rgba(255, 255, 255, 0.08);
+}
+
+/* Separator lines */
+#nd-docs-layout hr {
+  border-color: rgba(255, 255, 255, 0.06);
+}
+
+/* Popovers and dropdowns */
+[data-radix-popper-content-wrapper] > div,
+[role="menu"],
+[role="listbox"] {
+  background: #0f1535;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+
+[role="menuitem"],
+[role="option"] {
+  color: #e2e8f0;
+  transition: all 0.15s ease;
+}
+
+[role="menuitem"]:hover,
+[role="option"]:hover,
+[role="menuitem"][data-highlighted],
+[role="option"][data-highlighted] {
+  background: rgba(212, 175, 55, 0.1);
+  color: #d4af37;
+}
+
+/* Badges / tags */
+span[class*="badge"],
+span[class*="tag"] {
+  background: rgba(212, 175, 55, 0.1);
+  color: #d4af37;
+  border: 1px solid rgba(212, 175, 55, 0.2);
+}
+
+/* Focus ring override — gold */
+*:focus-visible {
+  outline-color: rgba(212, 175, 55, 0.5);
+}
+
+/* Accordion / collapsible in docs */
+details,
+[data-state="open"][class*="collapsible"],
+[data-state="closed"][class*="collapsible"] {
+  border-color: rgba(255, 255, 255, 0.08);
+}
+
+details summary {
+  color: #e2e8f0;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+details summary:hover {
+  color: #d4af37;
+}
+
+details[open] summary {
+  color: #d4af37;
+}
+
+/* Image styling in docs */
+.prose img {
+  border-radius: 0.75rem;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* Video embeds */
+.prose iframe,
+.prose video {
+  border-radius: 0.75rem;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* Keyboard shortcuts */
+.prose kbd {
+  background: #1e2a3e;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: #e2e8f0;
+  border-radius: 0.25rem;
+  padding: 0.1em 0.4em;
+  font-size: 0.85em;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+/* Footnotes */
+.prose [class*="footnote"] {
+  color: #64748b;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+/* Last updated / edit on github footer text */
+#nd-page [class*="text-fd-muted-foreground"],
+#nd-page [class*="text-muted"],
+.text-fd-muted-foreground {
+  color: #64748b;
+}
+
+/* Sidebar placeholder area (when sidebar is collapsed) */
+[data-sidebar-placeholder] {
+  background: transparent;
+}
+
+/* View options and copy buttons */
+#nd-page button[class*="inline-flex"] {
+  color: rgba(248, 250, 252, 0.5);
+  border-color: rgba(255, 255, 255, 0.08);
+  transition: all 0.2s ease;
+}
+
+#nd-page button[class*="inline-flex"]:hover {
+  color: #d4af37;
+  border-color: rgba(212, 175, 55, 0.3);
+  background: rgba(212, 175, 55, 0.06);
+}
+
+/* Definition lists */
+.prose dt {
+  color: #e8d5a0;
+  font-weight: 600;
+}
+
+.prose dd {
+  color: #e2e8f0;
+}
+
+/* Heading anchor links on hover */
+.prose h2 a,
+.prose h3 a,
+.prose h4 a {
+  color: inherit;
+  text-decoration: none;
+  border-bottom: none;
+}
+
+.prose h2 a:hover,
+.prose h3 a:hover,
+.prose h4 a:hover {
+  color: #d4af37;
+  border-bottom: none;
+}
+
+/* Print/export — ensure dark bg prints well */
+@media print {
+  body {
+    background: white;
+    color: #1a1a1a;
+  }
+}
